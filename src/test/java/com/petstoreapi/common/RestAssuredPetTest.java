@@ -6,6 +6,7 @@ import com.petStore.models.Category;
 import com.petStore.models.Pet;
 import com.petStore.models.Tag;
 import io.restassured.RestAssured;
+import net.thucydides.core.annotations.Step;
 import org.testng.annotations.BeforeClass;
 
 import java.util.Arrays;
@@ -43,6 +44,8 @@ public class RestAssuredPetTest {
 
     }
 
+
+    @Step
     public static void toCheckConnection(String apiLink) {
 //        RestAssured responce = new RestAssured();
         RestAssured.given()
@@ -54,7 +57,7 @@ public class RestAssuredPetTest {
 
     }
 
-
+    @Step
     public static void toPostPet(int petId, String siteLink) {
         Category category1 = new Category();
         category1.setId(petId);
@@ -82,7 +85,7 @@ public class RestAssuredPetTest {
                 .log();
     }
 
-
+    @Step
     public static void toGetPet(int petId) {
         Integer id = pet.getId();
 
@@ -94,7 +97,7 @@ public class RestAssuredPetTest {
 
     }
 
-
+    @Step
     public static void toDeletePet(int petId, String siteLink) {
 
         new RestAssured().given().accept("application/json").header("api_key", "special-key")
@@ -104,6 +107,7 @@ public class RestAssuredPetTest {
 
     }
 
+    @Step
     public static void checkDeletion (int petId, String siteLink)
     {
         RestAssured.get(siteLink+"/{id}", petId)
