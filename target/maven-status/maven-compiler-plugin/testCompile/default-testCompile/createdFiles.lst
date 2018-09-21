@@ -1,4 +1,0 @@
-com\petstoreapi\cucumber\RunCucumberTest.class
-com\petstoreapi\cucumber\RunSerenityTest.class
-com\petstoreapi\cucumber\StepDefinition.class
-com\petstoreapi\serenity\RestAssuredPetTest.class
